@@ -66,7 +66,7 @@
                     </strong>
                 </td>
                 <td style="height: 48px">
-                    <asp:TextBox ID="pIDtbx" runat="server" Height="33px" Width="245px" CssClass="auto-style3" ></asp:TextBox>
+                    <asp:TextBox ID="pIDtbx" runat="server" Height="33px" Width="245px" CssClass="auto-style3"></asp:TextBox>
                     <asp:Label ID="ErrorMessageLabel" runat="server" Text="" ForeColor="Red"></asp:Label>
 
                 </td>
@@ -149,14 +149,30 @@
             <tr>
                 <td style="width: 361px; justify-content:space-between;">
                     <asp:Button ID="Insertbtn" runat="server" style="background-color: #0066FF" Text="Insert" OnClick="InsertProduct" />
-                    <asp:Button ID="updatebtn" runat="server" style="background-color: #00FFCC" Text="Update" />
-                    <asp:Button ID="Deletebtn" runat="server" style="background-color: #FF4444" Text="Delete" OnClick="DeletProduct" />
-                    <asp:Button ID="Listbtn" runat="server" style="background-color: #FFFF00" Text="ListData" />
+                    <asp:Button ID="updatebtn" runat="server" style="background-color: #00FFCC" Text="Update" OnClick="Update_Product" />
+                    <asp:Button ID="Deletebtn" runat="server" style="background-color: #FF4444" Text="Delete" OnClick="DeletProduct" OnClientClick="return confirm('Are you sure to delete?');" />
+                    <asp:Button ID="Listbtn" runat="server" style="background-color: #FFFF00" Text="ListData" OnClick="All_Product_Details" />
                 </td>
             </tr>
             </table>
                 <br />
         <div style="padding-left:30px;">
+            <table class="w-100">
+                <tr>
+                    <td>&nbsp;</td>
+                </tr>
+            </table>
+            <asp:GridView ID="DataGrid" runat="server" AllowPaging="True" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CellPadding="4" Height="137px" PageSize="4" Width="656px">
+                <FooterStyle BackColor="#99CCCC" ForeColor="#003399" />
+                <HeaderStyle BackColor="#003399" Font-Bold="True" ForeColor="#CCCCFF" />
+                <PagerStyle BackColor="#99CCCC" ForeColor="#003399" HorizontalAlign="Left" />
+                <RowStyle BackColor="White" ForeColor="#003399" />
+                <SelectedRowStyle BackColor="#009999" Font-Bold="True" ForeColor="#CCFF99" />
+                <SortedAscendingCellStyle BackColor="#EDF6F6" />
+                <SortedAscendingHeaderStyle BackColor="#0D4AC4" />
+                <SortedDescendingCellStyle BackColor="#D6DFDF" />
+                <SortedDescendingHeaderStyle BackColor="#002876" />
+            </asp:GridView>
             <br />
         </div>
     </main>
